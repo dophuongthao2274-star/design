@@ -1,0 +1,74 @@
+/* NEWWAVE typography — Brand Guideline §03.
+   Manrope = brand font. Noto Sans JP = Japanese. Open Sans = office/co-edit fallback. */
+:root{
+  --font-sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-display:"Manrope",sans-serif;
+  --font-jp:"Noto Sans JP","Manrope",sans-serif;
+  --font-office:"Open Sans","Manrope",sans-serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+
+  /* Weights (Manrope ships 7: 200–800) */
+  --fw-extralight:200; /* @kind font */
+  --fw-light:300; /* @kind font */
+  --fw-regular:400; /* @kind font */
+  --fw-medium:500; /* @kind font */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --fw-extrabold:800; /* @kind font */
+
+  /* ---- Official type scale (§03 "Phân cấp kiểu chữ") ---- */
+  --fs-display-xxl:72px;   /* ExtraBold / 110% */
+  --fs-display-xl:56px;    /* Bold / 110% */
+  --fs-h1:40px;            /* Bold / 120% */
+  --fs-h2:32px;            /* Bold / 120% */
+  --fs-h3:24px;            /* SemiBold / 130% */
+  --fs-h4:20px;            /* SemiBold / 130% */
+  --fs-body-lg:18px;       /* Regular / 150% */
+  --fs-body:16px;          /* Regular / 150% */
+  --fs-caption:14px;       /* Regular / 130% */
+  --fs-label:12px;         /* Medium / 140% */
+
+  /* Aliases kept for existing components */
+  --fs-display:48px;
+  --fs-display-lg:60px;
+  --fs-lg:var(--fs-body-lg);
+  --fs-sm:var(--fs-caption);
+  --fs-xs:13px;
+  --fs-2xs:11px;
+
+  /* Line heights — as specified per level */
+  --lh-display:1.1; /* @kind other */
+  --lh-heading:1.2; /* @kind other */
+  --lh-subhead:1.3; /* @kind other */
+  --lh-body:1.5; /* @kind other */
+  --lh-body-web:1.6; /* @kind other */
+  --lh-label:1.4; /* @kind other */
+  --lh-tight:1.05; /* @kind other */
+  --lh-snug:1.35; /* @kind other */
+
+  /* Letter spacing — headline −2%, subheading −1%, body 0% */
+  --ls-headline:-0.02em; /* @kind other */
+  --ls-subhead:-0.01em; /* @kind other */
+  --ls-normal:0; /* @kind other */
+  --ls-tight:-0.03em; /* @kind other */
+  --ls-display:-0.02em; /* @kind other */
+  --ls-wide:0.04em; /* @kind other */
+  --ls-caps:0.12em; /* @kind other */
+
+  /* ---- Semantic text shorthands ---- */
+  --text-display-xxl:var(--fw-extrabold) var(--fs-display-xxl)/var(--lh-display) var(--font-display);
+  --text-display-xl:var(--fw-bold) var(--fs-display-xl)/var(--lh-display) var(--font-display);
+  --text-display:var(--fw-extrabold) var(--fs-display)/var(--lh-tight) var(--font-display);
+  --text-h1:var(--fw-bold) var(--fs-h1)/var(--lh-heading) var(--font-display);
+  --text-h2:var(--fw-bold) var(--fs-h2)/var(--lh-heading) var(--font-display);
+  --text-h3:var(--fw-semibold) var(--fs-h3)/var(--lh-subhead) var(--font-display);
+  --text-h4:var(--fw-semibold) var(--fs-h4)/var(--lh-subhead) var(--font-display);
+  --text-body-lg:var(--fw-regular) var(--fs-body-lg)/var(--lh-body) var(--font-sans);
+  --text-body:var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans);
+  --text-caption:var(--fw-regular) var(--fs-caption)/var(--lh-subhead) var(--font-sans);
+  --text-label:var(--fw-medium) var(--fs-label)/var(--lh-label) var(--font-sans);
+  --text-button:var(--fw-semibold) var(--fs-body)/1.2 var(--font-sans);
+
+  /* Japanese runs at 90–95% of the English size (§03 bilingual rule) */
+  --jp-scale:0.92; /* @kind other */
+}

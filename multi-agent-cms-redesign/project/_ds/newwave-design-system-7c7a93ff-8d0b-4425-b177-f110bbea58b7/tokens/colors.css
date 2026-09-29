@@ -1,0 +1,134 @@
+/* NEWWAVE color system — from Brand Guideline §04 */
+:root{
+  /* ---- Primary (Tech Blue family) ---- */
+  --nw-tech-blue:#002B9C;      /* Primary 01 — corporate foundation */
+  --nw-wave-blue:#006BFF;      /* Primary 02 — energy, motion */
+  --nw-bright-cyan:#3FE7FF;    /* Primary 03 — open, digital breathing room */
+
+  /* Tech Blue tints/shades */
+  --nw-tech-blue-900:#001a5e;
+  --nw-tech-blue-800:#001f7a;
+  --nw-tech-blue-700:#002B9C;
+  --nw-tech-blue-600:#0a3cbf;
+  --nw-tech-blue-500:#1a4fd6;
+  --nw-tech-blue-400:#4d78e0;
+  --nw-tech-blue-300:#8ba6ec;
+  --nw-tech-blue-200:#c2d1f6;
+  --nw-tech-blue-100:#e5ebfb;
+
+  /* Wave Blue tints/shades */
+  --nw-wave-blue-700:#0047a8;
+  --nw-wave-blue-600:#005ad6;
+  --nw-wave-blue-500:#006BFF;
+  --nw-wave-blue-400:#3d8bff;
+  --nw-wave-blue-300:#75abff;
+  --nw-wave-blue-200:#aecbff;
+  --nw-wave-blue-100:#e0ecff;
+
+  /* Cyan tints/shades */
+  --nw-cyan-600:#12b8d6;
+  --nw-cyan-500:#3FE7FF;
+  --nw-cyan-400:#6eecff;
+  --nw-cyan-300:#9df2ff;
+  --nw-cyan-200:#c6f7ff;
+  --nw-cyan-100:#e8fcff;
+
+  /* ---- Secondary 01 — digital (§04) ---- */
+  --nw-cloud-blue:#22AEDF;     /* Soft Cloud Blue — digital accent */
+  --nw-mint:#00D8A3;           /* Mint Green — growth / success / CTA */
+  --nw-light-blue:#E6F6FF;     /* Light Blue — surfaces, system UI */
+  --nw-amber:#FFC857;          /* Amber Yellow — optimism / highlight */
+  --nw-mint-600:#00b389;
+  --nw-amber-600:#e0a92f;
+
+  /* ---- Secondary 02 — POSM / photography (§04) ---- */
+  --nw-lavender:#CBC9F8;       /* Soft Lavender — human-centered, onboarding, team */
+  --nw-coral:#EC715D;          /* Priority Coral — priority / soft alert, small accents only */
+  --nw-steel:#61708B;          /* Steel Slate — systems, governance, B2B maturity */
+
+  /* Official tint steps (100/80/60/50/40/20/10%) */
+  --nw-cloud-blue-80:#4ebee6;
+  --nw-cloud-blue-60:#7ad2ed;
+  --nw-cloud-blue-50:#90d6ef;
+  --nw-cloud-blue-40:#a7e0f2;
+  --nw-cloud-blue-20:#d3eff9;
+  --nw-cloud-blue-10:#e9f7fc;
+  --nw-mint-80:#33e0b5;
+  --nw-mint-60:#66e8c8;
+  --nw-mint-50:#80ecd1;
+  --nw-mint-40:#99f0da;
+  --nw-mint-20:#ccf7ec;
+  --nw-mint-10:#e6fbf6;
+  --nw-amber-80:#ffd379;
+  --nw-amber-60:#ffde9a;
+  --nw-amber-50:#ffe4ab;
+  --nw-amber-40:#ffe9bc;
+  --nw-amber-20:#fff4dd;
+  --nw-amber-10:#fff9ee;
+  --nw-lavender-60:#e0dffb;
+  --nw-lavender-40:#eae9fd;
+  --nw-lavender-20:#f4f4fe;
+  --nw-coral-60:#f4a698;
+  --nw-coral-40:#f8c4bb;
+  --nw-coral-20:#fbe2de;
+  --nw-steel-80:#8190a4;
+  --nw-steel-60:#a0abbb;
+  --nw-steel-40:#c0c6d1;
+  --nw-steel-20:#dfe2e8;
+
+  /* ---- Neutrals (cool-tinted) ---- */
+  --nw-ink:#0a1330;            /* near-black, blue-cast */
+  --nw-slate-900:#141c38;
+  --nw-slate-800:#232b47;
+  --nw-slate-700:#3a4361;
+  --nw-slate-600:#565f7d;
+  --nw-slate-500:#767e99;
+  --nw-slate-400:#9aa1b8;
+  --nw-slate-300:#c1c7d6;
+  --nw-slate-200:#dee2ec;
+  --nw-slate-100:#eef1f7;
+  --nw-slate-50:#f6f8fc;
+  --nw-white:#ffffff;
+
+  /* ---- Semantic aliases ---- */
+  --color-brand:var(--nw-tech-blue);
+  --color-brand-hover:var(--nw-tech-blue-600);
+  --color-accent:var(--nw-wave-blue);
+  --color-accent-hover:var(--nw-wave-blue-600);
+  --color-highlight:var(--nw-bright-cyan);
+
+  --text-strong:var(--nw-ink);
+  --text-body:var(--nw-slate-700);
+  --text-muted:var(--nw-slate-500);
+  --text-on-brand:var(--nw-white);
+  --text-link:var(--nw-wave-blue);
+  --text-link-hover:var(--nw-tech-blue);
+
+  --surface-page:var(--nw-white);
+  --surface-subtle:var(--nw-slate-50);
+  --surface-card:var(--nw-white);
+  --surface-tint:var(--nw-light-blue);
+  --surface-brand:var(--nw-tech-blue);
+  --surface-inverse:var(--nw-ink);
+
+  --border-subtle:var(--nw-slate-200);
+  --border-default:var(--nw-slate-300);
+  --border-strong:var(--nw-slate-400);
+  --border-brand:var(--nw-wave-blue);
+
+  --success:var(--nw-mint);
+  --success-fg:var(--nw-mint-600);
+  --warning:var(--nw-amber);
+  --warning-fg:var(--nw-amber-600);
+  --info:var(--nw-cloud-blue);
+  --danger:#ff4d5e;
+  --danger-fg:#d62638;
+  --priority:var(--nw-coral);
+  --system:var(--nw-steel);
+  --human:var(--nw-lavender);
+
+  /* ---- Signature gradient (Tech Blue → Wave Blue → Bright Cyan) ---- */
+  --nw-gradient:linear-gradient(120deg,#002B9C 0%,#006BFF 52%,#3FE7FF 100%); /* @kind color */
+  --nw-gradient-soft:linear-gradient(120deg,#006BFF 0%,#3FE7FF 100%); /* @kind color */
+  --nw-gradient-ink:linear-gradient(150deg,#001a5e 0%,#002B9C 55%,#0a3cbf 100%); /* @kind color */
+}

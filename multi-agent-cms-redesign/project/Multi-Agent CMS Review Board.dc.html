@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/styles.css">
+  <script src="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/_ds_bundle.js"></script>
+  <style>body{margin:0;background:#050a1c;font-family:"Manrope",sans-serif}a{color:#3d8bff}a:hover{color:#75abff}</style>
+</helmet>
+<section style="padding:64px;display:grid;gap:40px;color:#c1c7d6;font-family:var(--font-sans)">
+  <header style="display:grid;gap:8px">
+    <div style="font:600 13px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:#3d8bff">Newwave Solutions · Product sub-page</div>
+    <h1 style="margin:0;font:800 44px/1.1 var(--font-sans);color:#fff;letter-spacing:-0.02em">Multi-Agent CMS — redesign review</h1>
+    <p style="margin:0;font:400 17px/1.6 var(--font-sans);max-width:760px">Live responsive page (v2, aligned to the newwavesolution.com homepage reference): <a href="Multi-Agent CMS v2.dc.html">Multi-Agent CMS v2.dc.html</a>. v1: <a href="Multi-Agent CMS.dc.html">Multi-Agent CMS.dc.html</a>. Frames below render the same file at 1440px and 375px. Yellow tags mark open inputs.</p>
+  </header>
+
+  <div style="display:flex;gap:56px;align-items:flex-start">
+    <div id="1a" style="display:grid;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#006BFF;color:#fff;font:700 12px/1 var(--font-sans);padding:5px 8px;border-radius:4px">1a</span><span style="font:600 15px/1 var(--font-sans);color:#fff">Desktop · 1440</span></div>
+      <iframe src="Multi-Agent CMS v2.dc.html" title="Desktop 1440" onLoad="{{ fit }}" style="width:1440px;height:{{ hD }}px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:#0a1330;display:block"></iframe>
+    </div>
+    <div id="1b" style="display:grid;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#006BFF;color:#fff;font:700 12px/1 var(--font-sans);padding:5px 8px;border-radius:4px">1b</span><span style="font:600 15px/1 var(--font-sans);color:#fff">Mobile · 375</span></div>
+      <iframe src="Multi-Agent CMS v2.dc.html" title="Mobile 375" onLoad="{{ fit }}" style="width:375px;height:{{ hM }}px;border:1px solid rgba(255,255,255,.1);border-radius:8px;background:#0a1330;display:block"></iframe>
+    </div>
+
+    <div style="width:720px;display:grid;gap:32px">
+      <div style="padding:32px;border-radius:16px;background:#0a1330;border:1px solid rgba(255,255,255,.08)">
+        <h2 style="margin:0 0 20px;font:700 24px/1.2 var(--font-sans);color:#fff">Section notes (v2)</h2>
+        <div style="display:grid;gap:18px;font:400 15px/1.6 var(--font-sans)">
+          <div><strong style="color:#fff">Main-site patterns adopted.</strong> Pure-black base, sections that fade from black into Tech Blue → Wave Blue, 8px cards with a thin Wave Blue border and a blue glow at the bottom, centred 600-weight H2s, pill buttons (white on dark, blue in the nav), round icon buttons, blue/grey pagination bars.</div>
+          <div><strong style="color:#fff">Global header / footer.</strong> Match the homepage: black header with logo, search, menu and a round blue language button; footer fades from black to blue, has column links and a white "Discuss Your Project →" pill, with the copyright on blue. These are still stand-ins for the live global components.</div>
+          <div><strong style="color:#fff">0 · Sub-nav.</strong> Black glass bar under the global header. The active anchor is white with a blue underline. Round language and display-mode buttons, blue pill "Request Trial →". On mobile the links become a scrolling row.</div>
+          <div><strong style="color:#fff">1 · Hero.</strong> Full-bleed dark hero like the homepage (slot for the main-site background video or photo). 600-weight H1 with "CMS Platform." in blue, white pill CTA (full width on mobile). Cards A/B use the blue-border card style and sit on the corners of the mockup.</div>
+          <div><strong style="color:#fff">2 · Features.</strong> Modelled on the homepage "IT Outsourcing" and solution cards: /01 index at top-left, round glass icon at top-right, title and body. 3×2 grid on desktop, stacked on mobile.</div>
+          
+          <div><strong style="color:#fff">4 · How It Works.</strong> Modelled on the "Practices" cards: blue gradient cards with a large glass icon peeking from the bottom-right corner, blue step number and connector line. On mobile they become a swipe carousel with pagination bars.</div>
+          <div><strong style="color:#fff">5 · Brain.</strong> Layers are an accordion like the homepage FAQ / "Why Newwave" (the open item gets a blue gradient). The open layer lights up in the L1/L2/L3 diagram. Four green-check chips below.</div>
+          <div><strong style="color:#fff">6 · Integrations.</strong> Split layout with a divided check list. Hub diagram with black nodes and blue outlines, dashed connectors and travelling pulses. On mobile: the AI node plus a 4×2 grid.</div>
+          <div><strong style="color:#fff">7 · Transparent Data Usage.</strong> Blue gradient trust band (like the homepage stats band) with concentric rings and a glass shield icon.</div>
+          <div><strong style="color:#fff">Section rhythm.</strong> Dark-led with light breaks, as on the homepage: Hero (dark) → Features (light) → How It Works (dark) → Brain (light, with the diagram kept on a dark panel) → Integrations (dark) → Data Usage (blue) → Footer (dark). Light sections use Slate 50 → Light Blue, white cards with a Slate 200 border, Ink headings, a Wave Blue 600 eyebrow and Light Blue chips.</div></div>
+      </div>
+
+      <div style="padding:32px;border-radius:16px;background:#0a1330;border:1px solid rgba(255,255,255,.08)">
+        <h2 style="margin:0 0 20px;font:700 24px/1.2 var(--font-sans);color:#fff">Design tokens</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:24px">
+          <sc-for list="{{ swatches }}" as="s" hint-placeholder-count="8">
+            <div style="display:grid;gap:8px;min-width:0">
+              <span style="height:48px;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:{{ s.hex }}"></span>
+              <span style="font:600 13px/1.3 var(--font-sans);color:#fff">{{ s.name }}</span>
+              <span style="font:400 12px/1.3 var(--font-mono);color:#9aa1b8;overflow-wrap:anywhere;min-width:0">{{ s.hex }} · {{ s.use }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;gap:10px;font:400 14px/1.6 var(--font-sans)">
+          <div><strong style="color:#fff">Font:</strong> Manrope (brand). H1 64/112% SemiBold −2% (40 mobile) · H2 48/120% SemiBold −2% (32 mobile) · H3 24/130% SemiBold · Body L 18/160% · Body 16/160% · Eyebrow 13 SemiBold caps +12% · Meta 13 Medium.</div>
+          <div><strong style="color:#fff">Layout:</strong> container 1280px, side padding clamp(16px, 4vw, 40px), section padding clamp(64px, 9vw, 120px), grid gap 20 (cards) / 32 (steps) / 56–80 (split columns). Breakpoint switch at 768; grids reflow at 1024 via auto-fit.</div>
+          <div><strong style="color:#fff">Radius:</strong> buttons 999 (pill) · icon buttons/tiles circular · cards, panels, video frame 8 · mockup 12 · tags 4.</div>
+          <div><strong style="color:#fff">Borders:</strong> white 8% (cards), 10–14% (controls), Wave Blue 400 60% on hover, Wave Blue 35% for icon tiles in process/trust.</div>
+          <div><strong style="color:#fff">Shadows:</strong> card hover 0 20 50 rgba(0,0,0,.35) · floating cards 0 20 50 rgba(0,0,0,.45) · mockup 0 40 90 rgba(0,0,0,.5) · CTA glow --shadow-brand.</div>
+          <div><strong style="color:#fff">Buttons:</strong> DS Button with pill radius. White fill with black text on dark (hero, footer); Wave Blue (#006BFF) in the sub-nav. md 44px / lg 54px.</div>
+        </div>
+      </div>
+
+      <div style="padding:32px;border-radius:16px;background:#0a1330;border:1px solid rgba(255,255,255,.08)">
+        <h2 style="margin:0 0 16px;font:700 24px/1.2 var(--font-sans);color:#fff">Open inputs</h2>
+        <div style="display:grid;gap:10px;font:400 14px/1.6 var(--font-sans)">
+          <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;background:#FFC857;color:#0a1330;font:700 11px/1 var(--font-sans);padding:4px 7px;border-radius:4px">[[ ]]</span>Product chat screenshot for the hero mockup.</div>
+          
+          <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;background:#FFC857;color:#0a1330;font:700 11px/1 var(--font-sans);padding:4px 7px;border-radius:4px">[[ ]]</span>Official monochrome logos for the 8 integration nodes.</div>
+          <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;background:#FFC857;color:#0a1330;font:700 11px/1 var(--font-sans);padding:4px 7px;border-radius:4px">[[ ]]</span>Live global header/footer + exact contact-form URL (currently newwavesolution.com/contact-us).</div>
+          <div style="display:flex;gap:10px;align-items:baseline"><span style="flex:none;background:#FFC857;color:#0a1330;font:700 11px/1 var(--font-sans);padding:4px 7px;border-radius:4px">[[ ]]</span>Live-site dark hex values, if they differ from the Brand Guideline 2026 tokens used here.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { hD: 6000, hM: 9000 };
+  renderVals() {
+    return {
+      hD: this.state.hD, hM: this.state.hM,
+      fit: (e) => {
+        const f = e.target, key = f.title.startsWith('Desktop') ? 'hD' : 'hM';
+        let n = 0;
+        const tick = () => {
+          try { const h = f.contentDocument.documentElement.scrollHeight; if (h > 400) this.setState({ [key]: h }); } catch (err) {}
+          if (++n < 12) setTimeout(tick, 500);
+        };
+        tick();
+      },
+      swatches: [
+        { name: 'Base bg', hex: '#000000', use: 'Main-site black' },
+        { name: 'Blue section', hex: 'linear-gradient(180deg,#000,#001A5E 55%,#0047A8)', use: 'Black→Tech→Wave' },
+        { name: 'Card', hex: 'linear-gradient(180deg,#000 35%,rgba(0,71,168,.55))', use: 'border #006BFF 55%' },
+        { name: 'Heading', hex: '#FFFFFF', use: 'H1–H3' },
+        { name: 'Body', hex: '#DEE2EC', use: 'Slate 200' },
+        { name: 'Meta', hex: '#9AA1B8', use: 'Slate 400' },
+        { name: 'Accent', hex: '#006BFF', use: 'Wave Blue' },
+        { name: 'Accent text', hex: '#3D8BFF', use: 'Wave Blue 400' },
+        { name: 'Status', hex: '#00D8A3', use: 'Mint, dots/checks' },
+        { name: 'Placeholder', hex: '#FFC857', use: 'Amber, review tags' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

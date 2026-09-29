@@ -1,0 +1,11 @@
+/* NEWWAVE typefaces.
+   Manrope = brand font (§03). Noto Sans JP = Japanese pairing (§03).
+   Open Sans = office/fallback font for co-editable Word/PPT/Excel docs (§03). */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&display=swap");
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200;font-display:swap;src:url("../assets/fonts/Manrope-ExtraLight.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:300;font-display:swap;src:url("../assets/fonts/Manrope-Light.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400;font-display:swap;src:url("../assets/fonts/Manrope-Regular.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:500;font-display:swap;src:url("../assets/fonts/Manrope-Medium.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:600;font-display:swap;src:url("../assets/fonts/Manrope-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:700;font-display:swap;src:url("../assets/fonts/Manrope-Bold.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:800;font-display:swap;src:url("../assets/fonts/Manrope-ExtraBold.ttf") format("truetype")}

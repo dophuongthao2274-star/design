@@ -1,0 +1,30 @@
+/* NEWWAVE layout & grid — Brand Guideline §05 "Nguyên tắc bố cục" */
+:root{
+  /* Column counts */
+  --grid-cols-print:12;   /* @kind other */
+  --grid-cols-web:12;     /* @kind other */
+  --grid-cols-tablet:6;   /* @kind other */
+  --grid-cols-mobile:4;   /* @kind other */
+  --grid-cols-social:4;   /* @kind other */
+
+  /* Margins — ≥10mm print, 40–80px digital */
+  --margin-print:7mm;     /* @kind other */
+  --margin-print-min:10mm; /* @kind other */
+  --margin-web:80px;      /* @kind other */
+  --margin-web-min:40px;  /* @kind other */
+  --margin-social:70px;   /* @kind other */
+
+  /* Gutters — 5–6mm print, ≥40px digital */
+  --gutter-print:5.5mm;   /* @kind other */
+  --gutter-web:40px;      /* @kind other */
+  --gutter-social:70px;   /* @kind other */
+
+  /* Canvas sizes */
+  --canvas-social:1080px; /* @kind other */
+  --canvas-slide-w:1280px; /* @kind other */
+  --canvas-slide-h:720px; /* @kind other */
+
+  /* Logo rules (§02) */
+  --logo-min-digital:24px; /* @kind other */
+  --logo-min-print:10mm;   /* @kind other */
+}

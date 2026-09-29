@@ -1,0 +1,16 @@
+/* NEWWAVE base — light element defaults consumers inherit */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{margin:0 0 .4em;color:var(--text-strong);font-family:var(--font-display);line-height:var(--lh-heading);letter-spacing:var(--ls-display);text-wrap:balance}
+h1{font-size:var(--fs-h1);font-weight:var(--fw-bold)}
+h2{font-size:var(--fs-h2);font-weight:var(--fw-bold)}
+h3{font-size:var(--fs-h3);font-weight:var(--fw-semibold)}
+h4{font-size:var(--fs-h4);font-weight:var(--fw-semibold)}
+p{margin:0 0 1em;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;transition:color var(--dur-fast) var(--ease-standard)}
+a:hover{color:var(--text-link-hover)}
+strong{font-weight:var(--fw-bold);color:var(--text-strong)}
+small{font-size:var(--fs-sm)}
+code,kbd{font-family:var(--font-mono);font-size:.9em}
+::selection{background:var(--nw-wave-blue-200);color:var(--nw-tech-blue)}
+.nw-gradient-text{background:var(--nw-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}

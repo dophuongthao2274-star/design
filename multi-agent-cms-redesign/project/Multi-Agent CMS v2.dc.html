@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Multi-Agent CMS | Newwave Solutions</title>
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/layout.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/tokens/base.css">
+  <link rel="stylesheet" href="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/styles.css">
+  <script src="_ds/newwave-design-system-7c7a93ff-8d0b-4425-b177-f110bbea58b7/_ds_bundle.js"></script>
+  <style>
+    html{scroll-behavior:smooth;background:#000}
+    body{margin:0;background:#000;color:#dee2ec;font-family:"Manrope",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:#3d8bff;text-decoration:none}
+    a:hover{color:#75abff}
+    :focus-visible{outline:3px solid #3d8bff;outline-offset:3px;border-radius:8px}
+    @media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto !important}}
+  </style>
+</helmet>
+
+<div style="background:#000;color:var(--nw-slate-200);font-family:var(--font-sans);min-height:100vh">
+
+  <!-- MAIN SITE GLOBAL HEADER -->
+  <header data-screen-label="Global header" style="background:#000">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:6px 16px;min-width:0;flex:1">
+        <a href="https://newwavesolution.com/" aria-label="Newwave Solutions home" style="display:flex;flex:none">
+          <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.Logo" variant="primary-white" height="{{ 28 }}" base-path="assets/logo" alt="Newwave Solutions" hint-size="140px,28px"></x-import>
+        </a>
+        <sc-if value="{{ tags }}" hint-placeholder-val="{{ true }}">
+          <span style="display:inline-flex;align-items:center;background:#FFC857;color:#0a1330;font:700 11px/1.2 var(--font-sans);padding:4px 8px;border-radius:4px;max-width:100%">[[main site global header — reuse live]]</span>
+        </sc-if>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(8px,2vw,28px);flex:none">
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <nav aria-label="Main" style="display:flex;align-items:center;gap:28px">
+            <a href="#" style="color:#fff;font:500 15px/1 var(--font-sans)">Company</a>
+            <a href="#" style="color:#fff;font:500 15px/1 var(--font-sans)">Services</a>
+            <a href="#" style="color:#fff;font:500 15px/1 var(--font-sans)">Industries</a>
+            <a href="#" style="color:#fff;font:500 15px/1 var(--font-sans)">Technologies</a>
+            <a href="#" style="color:#fff;font:500 15px/1 var(--font-sans)">Insights</a>
+          </nav>
+        </sc-if>
+        <button aria-label="Search" style="width:44px;height:44px;display:grid;place-items:center;background:transparent;border:none;color:#fff;cursor:pointer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:1.8;stroke-linecap:round"><circle cx="11" cy="11" r="7.5"></circle><path d="m20.5 20.5-4-4"></path></svg>
+        </button>
+        <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+          <button aria-label="Open main menu" style="width:44px;height:44px;display:grid;place-items:center;background:transparent;border:none;color:#fff;cursor:pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:1.8;stroke-linecap:round"><path d="M3 8h18M3 16h18"></path></svg>
+          </button>
+        </sc-if>
+        <button aria-label="Site language" style="width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--nw-wave-blue);border:none;color:#fff;cursor:pointer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 0. PRODUCT SUB-NAV -->
+  <nav aria-label="Multi-Agent CMS" data-screen-label="00 Sub-nav" style="position:sticky;top:0;z-index:50;background:rgba(0,0,0,.86);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px);min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;color:#fff;font:600 16px/1 var(--font-sans);white-space:nowrap">
+        <span style="width:30px;height:30px;border-radius:8px;background:var(--nw-wave-blue);display:grid;place-items:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" style="stroke-width:2;stroke-linecap:round"><circle cx="12" cy="5" r="2.2"></circle><circle cx="5" cy="18" r="2.2"></circle><circle cx="19" cy="18" r="2.2"></circle><path d="M12 7.5v4M12 11.5 6.6 16.2M12 11.5l5.4 4.7"></path></svg>
+        </span>
+        Multi-Agent CMS
+      </a>
+      <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:4px">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
+            <a href="{{ l.href }}" style="display:flex;align-items:center;height:44px;padding:0 14px;font:500 15px/1 var(--font-sans);color:{{ l.color }};border-bottom:2px solid {{ l.bar }};box-sizing:border-box;transition:color .2s">{{ l.label }}</a>
+          </sc-for>
+        </div>
+      </sc-if>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button aria-label="Language" style="width:44px;height:44px;display:grid;place-items:center;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;cursor:pointer;transition:border-color .2s" style-hover="border-color:#3d8bff">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M4 5h9M8.5 3v2M6 5c.6 3.4 2.8 6 6 7.5M11 5c-.6 3.4-2.8 6-6 7.5"></path><path d="m12 21 4-9 4 9M13.5 18h5"></path></svg>
+        </button>
+        <button aria-label="Display mode" style="width:44px;height:44px;display:grid;place-items:center;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;cursor:pointer;transition:border-color .2s" style-hover="border-color:#3d8bff">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"></path></svg>
+        </button>
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.Button" variant="accent" size="md" dc-props="{{ pillBlue }}" on-click="{{ goContact }}" hint-size="160px,44px">Request Trial →</x-import>
+        </sc-if>
+      </div>
+    </div>
+    <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;gap:4px;overflow-x:auto;padding:0 8px;border-top:1px solid rgba(255,255,255,.06)">
+        <sc-for list="{{ links }}" as="l" hint-placeholder-count="5">
+          <a href="{{ l.href }}" style="flex:none;display:flex;align-items:center;height:44px;padding:0 12px;font:500 14px/1 var(--font-sans);color:{{ l.color }};border-bottom:2px solid {{ l.bar }};box-sizing:border-box;white-space:nowrap">{{ l.label }}</a>
+        </sc-for>
+      </div>
+    </sc-if>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;background:#000">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(900px 520px at 78% 30%, rgba(0,107,255,.28), transparent 62%), radial-gradient(700px 420px at 10% 110%, rgba(0,71,168,.5), transparent 65%), #000"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:repeating-linear-gradient(90deg, transparent 0 140px, rgba(61,139,255,.05) 140px 142px);mask-image:linear-gradient(180deg,transparent,#000 40%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%,transparent)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.2) 60%,rgba(0,0,0,.4) 100%)"></div>
+    <sc-if value="{{ tags }}" hint-placeholder-val="{{ true }}">
+      <span style="position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;background:#FFC857;color:#0a1330;font:700 11px/1.2 var(--font-sans);padding:4px 8px;border-radius:4px">[[hero background video / photo — main-site style]]</span>
+    </sc-if>
+    <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(16px,4vw,40px) clamp(64px,7vw,104px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(48px,6vw,80px);align-items:center">
+      <div data-reveal="1" style="padding:0 clamp(0px,1vw,8px)">
+        <p style="margin:0 0 20px;font:600 13px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--nw-wave-blue-400)">The future of content infrastructure</p>
+        <h1 style="margin:0;font:600 clamp(40px,5vw,64px)/1.12 var(--font-sans);letter-spacing:-0.02em;color:#fff">
+          <sc-if value="{{ hlLine2 }}" hint-placeholder-val="{{ true }}">
+            <span style="display:block">Multi-Agent</span>
+            <span style="display:block;color:var(--nw-wave-blue-400)">CMS Platform.</span>
+          </sc-if>
+          <sc-if value="{{ hlLine1 }}" hint-placeholder-val="{{ false }}">
+            <span style="display:block;color:var(--nw-wave-blue-400)">Multi-Agent</span>
+            <span style="display:block">CMS Platform.</span>
+          </sc-if>
+        </h1>
+        <p style="margin:24px 0 36px;max-width:540px;font:400 clamp(16px,1.35vw,18px)/1.6 var(--font-sans);color:rgba(255,255,255,.88);text-wrap:pretty">Orchestrate intelligent AI agents across your organization. Automate content workflows with enterprise-grade security and real-time collaboration.</p>
+        <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.Button" variant="secondary" size="lg" full-width="{{ m }}" dc-props="{{ pillWhite }}" on-click="{{ goContact }}" hint-size="220px,54px">Request Trial →</x-import>
+      </div>
+
+      <div data-reveal="1" style="position:relative;padding:clamp(0px,2vw,24px)">
+        <div style="border-radius:12px;overflow:hidden;background:#0a0a0a;border:1px solid rgba(0,107,255,.55);box-shadow:0 40px 90px rgba(0,0,0,.6), 0 0 80px rgba(0,107,255,.18)">
+          <div style="height:38px;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid rgba(255,255,255,.08);background:#111">
+            <span style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2)"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2)"></span>
+            <span style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2)"></span>
+            <span style="margin-left:14px;flex:1;max-width:260px;height:20px;border-radius:999px;background:rgba(255,255,255,.06)"></span>
+          </div>
+          <div role="img" aria-label="Multi-Agent CMS chat workspace screenshot" style="position:relative;aspect-ratio:16/10;background:linear-gradient(180deg,#050505 0%,#001a5e 100%);display:grid;place-items:center">
+            <sc-if value="{{ tags }}" hint-placeholder-val="{{ true }}">
+              <span style="display:inline-flex;align-items:center;background:#FFC857;color:#0a1330;font:700 12px/1 var(--font-sans);padding:6px 10px;border-radius:4px">[[screenshot: product chat screen]]</span>
+            </sc-if>
+            <div aria-hidden="true" style="position:absolute;left:6%;right:6%;bottom:7%;height:42px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 18px">
+              <svg width="36" height="10" viewBox="0 0 36 10">
+                <circle cx="5" cy="5" r="3" fill="#3d8bff"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite" begin="0s"></animate></circle>
+                <circle cx="18" cy="5" r="3" fill="#3d8bff"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite" begin="0.2s"></animate></circle>
+                <circle cx="31" cy="5" r="3" fill="#3d8bff"><animate attributeName="opacity" values="0.25;1;0.25" dur="1.2s" repeatCount="indefinite" begin="0.4s"></animate></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;top:-6px;right:-18px;width:210px;padding:16px 18px;border-radius:8px;background:linear-gradient(180deg,rgba(0,0,0,.92) 30%,rgba(0,71,168,.92) 100%);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(0,107,255,.6);box-shadow:0 20px 50px rgba(0,0,0,.5)">
+            <div style="display:flex;align-items:center;gap:8px;font:600 15px/1.2 var(--font-sans);color:#fff">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="#00D8A3"></circle><circle cx="7" cy="7" r="3.2" fill="none" stroke="#00D8A3" style="stroke-width:1.4"><animate attributeName="r" values="3.2;6.6" dur="1.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.9;0" dur="1.8s" repeatCount="indefinite"></animate></circle></svg>
+              Agent Active
+            </div>
+            <div style="margin-top:12px;display:grid;gap:8px;font:500 13px/1.3 var(--font-sans);color:var(--nw-slate-200)">
+              <div style="display:flex;align-items:center;gap:8px"><svg width="6" height="6" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="#3d8bff"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" begin="0s"></animate></circle></svg>Processing…</div>
+              <div style="display:flex;align-items:center;gap:8px"><svg width="6" height="6" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="#3d8bff"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" begin="0.8s"></animate></circle></svg>Analyzing…</div>
+              <div style="display:flex;align-items:center;gap:8px"><svg width="6" height="6" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="#3d8bff"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" begin="1.6s"></animate></circle></svg>Generating…</div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:-10px;left:-26px;display:flex;align-items:center;gap:12px;padding:14px 18px 14px 14px;border-radius:8px;background:linear-gradient(180deg,rgba(0,0,0,.92) 30%,rgba(0,71,168,.92) 100%);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(0,107,255,.6);box-shadow:0 20px 50px rgba(0,0,0,.5)">
+            <span style="width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)">
+              <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="Secure Privacy" size="{{ 30 }}" base-path="assets/icons" alt="" hint-size="30px,30px"></x-import>
+            </span>
+            <div>
+              <div style="font:600 15px/1.2 var(--font-sans);color:#fff">Secure</div>
+              <div style="margin-top:4px;font:500 13px/1.3 var(--font-sans);color:var(--nw-slate-200);white-space:nowrap">E2E encrypted · RBAC · Audit logs</div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;gap:12px;margin-top:-24px">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:8px;background:linear-gradient(180deg,#000 30%,rgba(0,71,168,.8) 100%);border:1px solid rgba(0,107,255,.6)">
+            <span style="width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)">
+              <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="Secure Privacy" size="{{ 30 }}" base-path="assets/icons" alt="" hint-size="30px,30px"></x-import>
+            </span>
+            <div>
+              <div style="font:600 15px/1.2 var(--font-sans);color:#fff">Secure</div>
+              <div style="margin-top:4px;font:500 13px/1.3 var(--font-sans);color:var(--nw-slate-200)">E2E encrypted · RBAC · Audit logs</div>
+            </div>
+          </div>
+          <div style="padding:14px 16px;border-radius:8px;background:linear-gradient(180deg,#000 30%,rgba(0,71,168,.8) 100%);border:1px solid rgba(0,107,255,.6)">
+            <div style="display:flex;align-items:center;gap:8px;font:600 15px/1.2 var(--font-sans);color:#fff">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="#00D8A3"></circle><circle cx="7" cy="7" r="3.2" fill="none" stroke="#00D8A3" style="stroke-width:1.4"><animate attributeName="r" values="3.2;6.6" dur="1.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0.9;0" dur="1.8s" repeatCount="indefinite"></animate></circle></svg>
+              Agent Active
+            </div>
+            <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px 16px;font:500 13px/1.3 var(--font-sans);color:var(--nw-slate-200)">
+              <span>Processing…</span><span>Analyzing…</span><span>Generating…</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    <div style="position:relative;display:flex;justify-content:center;padding-bottom:28px">
+      <a href="#features" aria-label="Scroll to Features" style="width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);color:#fff">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="m6 9 6 6 6-6"><animateTransform attributeName="transform" type="translate" values="0 -2;0 2;0 -2" dur="2.4s" repeatCount="indefinite"></animateTransform></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. FEATURES -->
+  <section id="features" data-screen-label="02 Features" style="scroll-margin-top:64px;background:linear-gradient(180deg,#f6f8fc 0%,#eef5fd 100%);padding:clamp(64px,9vw,120px) 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px)">
+      <div data-reveal="1" style="max-width:760px;margin:0 auto clamp(40px,5vw,64px);text-align:center">
+        <p style="margin:0 0 16px;font:600 13px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--nw-wave-blue-600)">Platform Capabilities</p>
+        <h2 style="margin:0;font:600 clamp(32px,3.4vw,48px)/1.2 var(--font-sans);letter-spacing:-0.02em;color:var(--nw-ink);text-wrap:balance">Everything your AI workflows need</h2>
+        <p style="margin:20px 0 0;font:400 clamp(16px,1.35vw,18px)/1.6 var(--font-sans);color:var(--nw-slate-700);text-wrap:pretty">A comprehensive platform built for enterprise teams who need powerful, reliable AI agent management.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+          <div data-reveal="1">
+            <article style="position:relative;height:100%;box-sizing:border-box;padding:32px;border-radius:8px;background:#fff;border:1px solid var(--nw-slate-200);box-shadow:var(--shadow-sm);transition:transform .25s cubic-bezier(.16,1,.3,1),border-color .25s,box-shadow .25s" style-hover="transform:translateY(-4px);border-color:#006BFF;box-shadow:0 20px 50px rgba(0,107,255,.16)">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+                <span style="font:600 15px/1 var(--font-sans);color:var(--nw-wave-blue-600);font-variant-numeric:tabular-nums">{{ f.n }}</span>
+                <span style="width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--nw-light-blue);border:1px solid var(--nw-wave-blue-100)">
+                  <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="{{ f.icon }}" size="{{ 40 }}" base-path="assets/icons" alt="" hint-size="40px,40px"></x-import>
+                </span>
+              </div>
+              <h3 style="margin:24px 0 12px;font:600 24px/1.3 var(--font-sans);letter-spacing:-0.01em;color:var(--nw-ink)">{{ f.title }}</h3>
+              <p style="margin:0;font:400 16px/1.6 var(--font-sans);color:var(--nw-slate-600);text-wrap:pretty">{{ f.body }}</p>
+            </article>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS -->
+  <section id="how-it-works" data-screen-label="04 How It Works" style="scroll-margin-top:64px;background:#000;padding:clamp(64px,9vw,120px) 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px)">
+      <div data-reveal="1" style="max-width:760px;margin:0 auto clamp(40px,5vw,64px);text-align:center">
+        <p style="margin:0 0 16px;font:600 13px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--nw-wave-blue-400)">How It Works</p>
+        <h2 style="margin:0;font:600 clamp(32px,3.4vw,48px)/1.2 var(--font-sans);letter-spacing:-0.02em;color:#fff;text-wrap:balance">Three steps to smarter work</h2>
+      </div>
+      <ol ref="{{ stepsRef }}" onScroll="{{ onStepsScroll }}" style="list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <li style="scroll-snap-align:start;position:relative;overflow:hidden;min-height:300px;box-sizing:border-box;padding:32px;border-radius:8px;background:linear-gradient(180deg,#000 30%,#0047a8 100%);border:1px solid rgba(0,107,255,.55);display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font:600 15px/1 var(--font-sans);letter-spacing:.04em;color:var(--nw-wave-blue-400)">{{ s.n }}</span>
+              <sc-if value="{{ s.line }}" hint-placeholder-val="{{ true }}">
+                <span aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(61,139,255,.8),rgba(61,139,255,0))"></span>
+              </sc-if>
+            </div>
+            <h3 style="margin:28px 0 12px;max-width:260px;font:600 24px/1.3 var(--font-sans);color:#fff">{{ s.title }}</h3>
+            <p style="margin:0;max-width:300px;font:400 16px/1.6 var(--font-sans);color:var(--nw-slate-200);text-wrap:pretty">{{ s.body }}</p>
+            <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-14px;opacity:.95">
+              <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="{{ s.icon }}" size="{{ 96 }}" base-path="assets/icons" alt="" hint-size="96px,96px"></x-import>
+            </span>
+          </li>
+        </sc-for>
+      </ol>
+      <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+        <div aria-hidden="true" style="display:flex;justify-content:center;gap:8px;margin-top:24px">
+          <sc-for list="{{ bars }}" as="b" hint-placeholder-count="3">
+            <span style="width:32px;height:5px;border-radius:999px;background:{{ b }};transition:background .3s"></span>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- 5. BRAIN -->
+  <section id="brain" data-screen-label="05 Brain" style="scroll-margin-top:64px;background:linear-gradient(180deg,#f6f8fc 0%,#eef5fd 100%);padding:clamp(64px,9vw,120px) 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px)">
+      <div data-reveal="1" style="max-width:760px;margin:0 auto clamp(40px,5vw,64px);text-align:center">
+        <p style="margin:0 0 16px;font:600 13px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--nw-wave-blue-600)">Adaptive Intelligence</p>
+        <h2 style="margin:0;font:600 clamp(32px,3.4vw,48px)/1.2 var(--font-sans);letter-spacing:-0.02em;color:var(--nw-ink);text-wrap:balance">An agent that grows with you</h2>
+        <p style="margin:20px 0 0;font:400 clamp(16px,1.35vw,18px)/1.6 var(--font-sans);color:var(--nw-slate-700);text-wrap:pretty">Our three-layer Brain architecture learns from every conversation, building a persistent memory that makes your agent smarter over time.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(32px,4vw,56px);align-items:center">
+        <div data-reveal="1" style="display:grid;gap:8px">
+          <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3">
+            <div style="border-radius:8px;border:1px solid {{ l.border }};background:{{ l.bg }};transition:background .3s,border-color .3s">
+              <button onClick="{{ l.toggle }}" aria-expanded="{{ l.open }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:24px;background:transparent;border:none;cursor:pointer;text-align:left;color:var(--nw-ink);font-family:var(--font-sans)">
+                <span style="flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--nw-light-blue);border:1px solid var(--nw-wave-blue-100)">
+                  <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="{{ l.icon }}" size="{{ 36 }}" base-path="assets/icons" alt="" hint-size="36px,36px"></x-import>
+                </span>
+                <span style="flex:1;font:600 clamp(18px,1.6vw,22px)/1.3 var(--font-sans)"><span style="color:var(--nw-wave-blue-600)">{{ l.code }}</span> — {{ l.name }}</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="flex:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;transform:{{ l.rot }}"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <sc-if value="{{ l.open }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;padding:0 24px 24px 96px;font:400 16px/1.6 var(--font-sans);color:var(--nw-slate-600);text-wrap:pretty">{{ l.body }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div data-reveal="1" style="display:grid;gap:16px">
+          <div role="img" aria-label="Diagram: memory layers L1, L2 and L3 feeding into the agent" style="padding:clamp(16px,3vw,32px);border-radius:8px;background:radial-gradient(420px 260px at 80% 50%, rgba(0,107,255,.2), transparent 70%), #000;border:1px solid rgba(0,107,255,.55)">
+            <svg viewBox="0 0 480 300" style="display:block;width:100%;height:auto" aria-hidden="true">
+              <path d="M244 60 C 310 60, 318 150, 360 150" fill="none" stroke="#3d8bff" style="stroke-width:1.5;stroke-dasharray:4 6;opacity:.8"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.4s" repeatCount="indefinite"></animate></path>
+              <path d="M244 150 L 360 150" fill="none" stroke="#3d8bff" style="stroke-width:1.5;stroke-dasharray:4 6;opacity:.8"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.4s" repeatCount="indefinite"></animate></path>
+              <path d="M244 240 C 310 240, 318 150, 360 150" fill="none" stroke="#3d8bff" style="stroke-width:1.5;stroke-dasharray:4 6;opacity:.8"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.4s" repeatCount="indefinite"></animate></path>
+              <circle r="3.5" fill="#75abff"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0s" path="M244 60 C 310 60, 318 150, 360 150"></animateMotion></circle>
+              <circle r="3.5" fill="#75abff"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.8s" path="M244 150 L 360 150"></animateMotion></circle>
+              <circle r="3.5" fill="#75abff"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.6s" path="M244 240 C 310 240, 318 150, 360 150"></animateMotion></circle>
+              <rect x="24" y="30" width="220" height="60" rx="8" stroke="#3d8bff" style="stroke-width:1.5;fill:{{ p0 }};transition:fill .3s"></rect>
+              <rect x="24" y="120" width="220" height="60" rx="8" stroke="#3d8bff" style="stroke-width:1.5;fill:{{ p1 }};transition:fill .3s"></rect>
+              <rect x="24" y="210" width="220" height="60" rx="8" stroke="#3d8bff" style="stroke-width:1.5;fill:{{ p2 }};transition:fill .3s"></rect>
+              <text x="48" y="67" fill="#fff" style="font:700 20px Manrope, sans-serif">L1</text>
+              <text x="48" y="157" fill="#fff" style="font:700 20px Manrope, sans-serif">L2</text>
+              <text x="48" y="247" fill="#fff" style="font:700 20px Manrope, sans-serif">L3</text>
+              <rect x="96" y="54" width="120" height="4" rx="2" fill="rgba(255,255,255,.3)"></rect><rect x="96" y="64" width="80" height="4" rx="2" fill="rgba(255,255,255,.15)"></rect>
+              <rect x="96" y="144" width="104" height="4" rx="2" fill="rgba(255,255,255,.3)"></rect><rect x="96" y="154" width="120" height="4" rx="2" fill="rgba(255,255,255,.15)"></rect>
+              <rect x="96" y="234" width="90" height="4" rx="2" fill="rgba(255,255,255,.3)"></rect><rect x="96" y="244" width="110" height="4" rx="2" fill="rgba(255,255,255,.15)"></rect>
+              <circle cx="410" cy="150" r="62" fill="none" stroke="rgba(61,139,255,.3)" style="stroke-width:1"></circle>
+              <circle cx="410" cy="150" r="48" fill="#006BFF"></circle>
+              <image href="assets/icons/Artificial Intelligence.png" x="382" y="122" width="56" height="56"></image>
+            </svg>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px">
+            <sc-for list="{{ chips }}" as="c" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;min-height:44px;box-sizing:border-box;border-radius:8px;background:var(--nw-light-blue);border:1px solid var(--nw-wave-blue-100);font:500 15px/1.4 var(--font-sans);color:var(--nw-tech-blue)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none"><circle cx="12" cy="12" r="10" fill="#00D8A3"></circle><path d="m7.5 12.3 3 3 6-6.3" stroke="#fff" style="stroke-width:2;stroke-linecap:round;stroke-linejoin:round"></path></svg>
+                {{ c }}
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTEGRATIONS -->
+  <section id="integrations" data-screen-label="06 Integrations" style="scroll-margin-top:64px;background:#000;padding:clamp(64px,9vw,120px) 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+      <div data-reveal="1">
+        <p style="margin:0 0 16px;font:600 13px/1.2 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;color:var(--nw-wave-blue-400)">Integrations</p>
+        <h2 style="margin:0;font:600 clamp(32px,3.4vw,48px)/1.2 var(--font-sans);letter-spacing:-0.02em;color:#fff">
+          <span style="display:block">Connect everything</span>
+          <span style="display:block;color:var(--nw-slate-400)">your team uses</span>
+        </h2>
+        <p style="margin:20px 0 0;max-width:520px;font:400 clamp(16px,1.35vw,18px)/1.6 var(--font-sans);color:var(--nw-slate-200);text-wrap:pretty">First-class support for enterprise tools, databases, and APIs. Custom MCP integrations for any internal system.</p>
+        <ul style="list-style:none;margin:32px 0 0;padding:0;display:grid">
+          <sc-for list="{{ intList }}" as="i" hint-placeholder-count="5">
+            <li style="display:flex;align-items:flex-start;gap:12px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);font:400 16px/1.5 var(--font-sans);color:var(--nw-slate-200)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="10" fill="rgba(0,216,163,.16)"></circle><path d="m7.5 12.3 3 3 6-6.3" stroke="#00D8A3" style="stroke-width:2;stroke-linecap:round;stroke-linejoin:round"></path></svg>
+              <span><strong style="font-weight:600;color:#fff">{{ i.a }}</strong>{{ i.b }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+
+      <div data-reveal="1" style="position:relative">
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <div role="img" aria-label="Integration diagram: AI connected to Redmine, GitLab, Redis, PostgreSQL, SonarQube, S3, Email and Cron Job" style="border-radius:8px;background:radial-gradient(closest-side, rgba(0,107,255,.22), transparent), linear-gradient(180deg,#000 40%,rgba(0,71,168,.5) 100%);border:1px solid rgba(0,107,255,.55);padding:16px">
+            <svg viewBox="0 0 520 520" style="display:block;width:100%;height:auto" aria-hidden="true">
+              <circle cx="260" cy="260" r="180" fill="none" stroke="rgba(255,255,255,.06)" style="stroke-width:1"></circle>
+              <circle cx="260" cy="260" r="110" fill="none" stroke="rgba(255,255,255,.05)" style="stroke-width:1"></circle>
+              <g stroke="#3d8bff" fill="none" style="stroke-width:1.5;stroke-dasharray:4 6;opacity:.75">
+                <path d="M260 260 L260 80"></path><path d="M260 260 L387 133"></path><path d="M260 260 L440 260"></path><path d="M260 260 L387 387"></path>
+                <path d="M260 260 L260 440"></path><path d="M260 260 L133 387"></path><path d="M260 260 L80 260"></path><path d="M260 260 L133 133"></path>
+                <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.4s" repeatCount="indefinite"></animate>
+              </g>
+              <g fill="#75abff">
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s" path="M260 260 L260 80"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.4s" path="M260 260 L387 133"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0.8s" path="M260 260 L440 260"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.2s" path="M260 260 L387 387"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.6s" path="M260 260 L260 440"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.0s" path="M260 260 L133 387"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.4s" path="M260 260 L80 260"></animateMotion></circle>
+                <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.8s" path="M260 260 L133 133"></animateMotion></circle>
+              </g>
+              <g fill="#000" stroke="rgba(61,139,255,.6)" style="stroke-width:1">
+                <circle cx="260" cy="80" r="32"></circle><circle cx="387" cy="133" r="32"></circle><circle cx="440" cy="260" r="32"></circle><circle cx="387" cy="387" r="32"></circle>
+                <circle cx="260" cy="440" r="32"></circle><circle cx="133" cy="387" r="32"></circle><circle cx="80" cy="260" r="32"></circle><circle cx="133" cy="133" r="32"></circle>
+              </g>
+              <g fill="none" stroke="rgba(255,255,255,.3)" style="stroke-width:1;stroke-dasharray:2 3">
+                <rect x="248" y="68" width="24" height="24" rx="6"></rect><rect x="375" y="121" width="24" height="24" rx="6"></rect><rect x="428" y="248" width="24" height="24" rx="6"></rect><rect x="375" y="375" width="24" height="24" rx="6"></rect>
+                <rect x="248" y="428" width="24" height="24" rx="6"></rect><rect x="121" y="375" width="24" height="24" rx="6"></rect><rect x="68" y="248" width="24" height="24" rx="6"></rect><rect x="121" y="121" width="24" height="24" rx="6"></rect>
+              </g>
+              <g fill="#fff" style="font:500 13px Manrope, sans-serif;text-anchor:middle">
+                <text x="260" y="130">Redmine</text><text x="387" y="183">GitLab</text><text x="440" y="310">Redis</text><text x="387" y="437">PostgreSQL</text>
+                <text x="260" y="490">SonarQube</text><text x="133" y="437">S3</text><text x="80" y="310">Email</text><text x="133" y="183">Cron Job</text>
+              </g>
+              <circle cx="260" cy="260" r="68" fill="rgba(0,107,255,.16)"><animate attributeName="r" values="60;74;60" dur="3s" repeatCount="indefinite"></animate></circle>
+              <circle cx="260" cy="260" r="52" fill="#006BFF"></circle>
+              <text x="260" y="270" fill="#fff" style="font:700 28px Manrope, sans-serif;text-anchor:middle">AI</text>
+            </svg>
+          </div>
+        </sc-if>
+        <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+          <div role="img" aria-label="Integrations: AI connected to Redmine, GitLab, Redis, PostgreSQL, SonarQube, S3, Email and Cron Job" style="border-radius:8px;background:linear-gradient(180deg,#000 40%,rgba(0,71,168,.5) 100%);border:1px solid rgba(0,107,255,.55);padding:48px 12px 24px">
+            <div style="display:flex;justify-content:center;margin-bottom:24px">
+              <span style="width:80px;height:80px;border-radius:50%;background:var(--nw-wave-blue);display:grid;place-items:center;font:700 24px/1 var(--font-sans);color:#fff;box-shadow:0 0 0 10px rgba(0,107,255,.16)">AI</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 6px">
+              <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="8">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+                  <span style="width:52px;height:52px;border-radius:50%;background:#000;border:1px solid rgba(61,139,255,.6);display:grid;place-items:center">
+                    <span style="width:20px;height:20px;border-radius:5px;border:1px dashed rgba(255,255,255,.3)"></span>
+                  </span>
+                  <span style="font:500 12px/1.2 var(--font-sans);color:#fff;text-align:center">{{ n }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ tags }}" hint-placeholder-val="{{ true }}">
+          <span style="position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;background:#FFC857;color:#0a1330;font:700 11px/1.2 var(--font-sans);padding:4px 8px;border-radius:4px">[[official monochrome logos]]</span>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TRANSPARENT DATA USAGE -->
+  <section data-screen-label="07 Transparent Data Usage" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#001a5e 0%,#0047a8 55%,#006BFF 100%);padding:clamp(64px,9vw,120px) 0">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:repeating-radial-gradient(circle at -10% 50%, transparent 0 88px, rgba(255,255,255,.05) 89px 90px)"></div>
+    <div data-reveal="1" style="position:relative;max-width:880px;margin:0 auto;padding:0 clamp(16px,4vw,40px);text-align:center;display:flex;flex-direction:column;align-items:center">
+      <span style="width:80px;height:80px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)">
+        <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.BrandIcon" name="Secure Privacy" size="{{ 48 }}" base-path="assets/icons" alt="" hint-size="48px,48px"></x-import>
+      </span>
+      <h2 style="margin:28px 0 0;font:600 clamp(32px,3.4vw,48px)/1.2 var(--font-sans);letter-spacing:-0.02em;color:#fff">Transparent Data Usage</h2>
+      <p style="margin:20px 0 0;max-width:760px;font:400 clamp(16px,1.35vw,18px)/1.7 var(--font-sans);color:#fff;text-wrap:pretty">We request access to your data, including Google Drive documents, exclusively to allow your AI agents to read, securely index, and reference them. Your data is processed strictly for fulfilling your queries and is never shared with third parties or used for training generalized AI models without your explicit consent.</p>
+    </div>
+  </section>
+
+  <!-- MAIN SITE GLOBAL FOOTER -->
+  <footer data-screen-label="Global footer" style="background:linear-gradient(180deg,#000 0%,#000 30%,#001a5e 70%,#0047a8 100%)">
+    <div style="max-width:1280px;margin:0 auto;padding:64px clamp(16px,4vw,40px) 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:40px 32px">
+      <div style="display:grid;gap:16px;align-content:start;grid-column:1/-1;max-width:420px">
+        <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.Logo" variant="primary-white" height="{{ 32 }}" base-path="assets/logo" alt="Newwave Solutions" hint-size="160px,32px"></x-import>
+        <p style="margin:0;font:400 15px/1.6 var(--font-sans);color:#fff">We are here to deliver solutions that keep you competitive in a constantly evolving market.</p>
+        <sc-if value="{{ tags }}" hint-placeholder-val="{{ true }}">
+          <span style="justify-self:start;display:inline-flex;align-items:center;background:#FFC857;color:#0a1330;font:700 11px/1.2 var(--font-sans);padding:4px 8px;border-radius:4px">[[main site global footer — reuse live, incl. award logos]]</span>
+        </sc-if>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div style="font:600 18px/1.3 var(--font-sans);color:#fff;margin-bottom:4px">Company</div>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">About Us</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">How We Work</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Partnership</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Careers</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Portfolio</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div style="font:600 18px/1.3 var(--font-sans);color:#fff;margin-bottom:4px">Services</div>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Software Development</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">AI Development</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Web Development</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Hire Developers</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div style="font:600 18px/1.3 var(--font-sans);color:#fff;margin-bottom:4px">Insights</div>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">News</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Trend</a>
+        <a href="#" style="color:#fff;font:400 15px/1.6 var(--font-sans)">Blog</a>
+      </div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div style="font:600 18px/1.3 var(--font-sans);color:#fff;margin-bottom:4px">Contact</div>
+        <div style="font:400 15px/1.6 var(--font-sans);color:#fff">Business enquiry:<br>sales@newwavesolution.com</div>
+        <div style="margin-top:8px">
+          <x-import component-from-global-scope="NEWWAVEDesignSystem_7c7a93.Button" variant="secondary" size="md" dc-props="{{ pillWhite }}" on-click="{{ goContact }}" hint-size="210px,44px">Discuss Your Project →</x-import>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.18);padding:20px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;font:400 14px/1.5 var(--font-sans);color:#fff">
+      <span>Newwave Solutions, © 2026 All Rights Reserved.</span>
+      <a href="#" style="color:#fff">Privacy Policy</a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPlaceholders&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;headlineHighlight&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;CMS Platform.&quot;,&quot;Multi-Agent&quot;],&quot;default&quot;:&quot;CMS Platform.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { w: window.innerWidth, active: '', open: 0, step: 0 };
+  stepsRef = React.createRef();
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onR);
+    this.t = setTimeout(() => this.setup(), 120);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onR);
+    clearTimeout(this.t);
+    this.io && this.io.disconnect();
+    this.io2 && this.io2.disconnect();
+  }
+  setup() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || this.props.motion === false;
+    if (reduce) {
+      document.querySelectorAll('svg').forEach(s => s.pauseAnimations && s.pauseAnimations());
+    } else {
+      this.io = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; this.io.unobserve(e.target); }
+      }), { threshold: 0.05 });
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) return;
+        el.style.opacity = 0; el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1)';
+        this.io.observe(el);
+      });
+    }
+    this.io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) this.setState({ active: e.target.id });
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    ['top', 'features', 'how-it-works', 'brain', 'integrations'].forEach(id => {
+      const el = document.getElementById(id); el && this.io2.observe(el);
+    });
+  }
+  renderVals() {
+    const m = this.state.w < 768;
+    const hl = this.props.headlineHighlight ?? 'CMS Platform.';
+    const { active, open, step } = this.state;
+    const link = (label, id) => ({ label, href: '#' + id, color: active === id ? '#fff' : 'rgba(255,255,255,.72)', bar: active === id ? '#006BFF' : 'transparent' });
+    const layerData = [
+      { code: 'L1', name: 'Instant Memory', icon: 'Time Flexibility', body: 'Atomic facts about your preferences, workflows, and context — preloaded into every conversation so the agent already knows you.' },
+      { code: 'L2', name: 'Knowledge Wiki', icon: 'Task Management Tool', body: 'Topic-based knowledge pages built from your conversations, recalled on-demand via semantic search when relevant.' },
+      { code: 'L3', name: 'Dream Reflection', icon: 'Innovation', body: "Nightly consolidation that reviews the day's interactions, merges duplicate facts, and curates the knowledge wiki." }
+    ];
+    const pf = i => (open === i ? 'rgba(0,107,255,.45)' : 'rgba(0,107,255,.08)');
+    return {
+      m, d: !m,
+      tags: this.props.showPlaceholders ?? true,
+      hlLine2: hl === 'CMS Platform.', hlLine1: hl === 'Multi-Agent',
+      goContact: () => { window.location.href = 'https://newwavesolution.com/contact-us'; },
+      pillWhite: { style: { borderRadius: '999px', background: '#fff', color: '#000', border: '1px solid #fff' } },
+      pillBlue: { style: { borderRadius: '999px' } },
+      links: [link('Features', 'features'), link('How It Works', 'how-it-works'), link('Brain', 'brain'), link('Integrations', 'integrations')],
+      features: [
+        { n: '/01', icon: 'Artificial Intelligence', title: 'Multi-Agent Orchestration', body: 'Deploy and coordinate multiple AI agents that collaborate autonomously to complete complex content tasks.' },
+        { n: '/02', icon: 'Secure Privacy', title: 'Enterprise Security', body: 'Role-based access control, audit logs, and end-to-end encryption keep your data protected.' },
+        { n: '/03', icon: 'Adaptive Learning', title: 'Knowledge Management', body: "Centralize your organization's knowledge base so agents always have the right context." },
+        { n: '/04', icon: 'Synergy', title: 'Real-time Collaboration', body: 'Teams and agents work side by side with live updates, notifications, and shared workspaces.' },
+        { n: '/05', icon: 'Framework', title: 'Provider Agnostic', body: 'Connect OpenAI, Gemini, Claude or any custom model. Switch providers without changing your workflows.' },
+        { n: '/06', icon: 'Integration', title: 'MCP Integration', body: 'Extend agent capabilities with any MCP-compatible tool server — databases, APIs, and more.' }
+      ],
+      steps: [
+        { n: '01', icon: 'Data Migration', title: 'Connect your tools', body: 'Link Redmine, GitLab, databases, email, and 50+ enterprise systems in minutes with secure OAuth.', line: true },
+        { n: '02', icon: 'Chatbot', title: 'Ask anything', body: 'Chat naturally — the root agent intelligently routes your request to the right specialist agent.', line: true },
+        { n: '03', icon: 'Comprehensive Reporting', title: 'Get results', body: 'Receive answers, visualizations, completed tasks, and generated reports — all in one conversation.', line: false }
+      ],
+      stepsRef: this.stepsRef,
+      onStepsScroll: (e) => {
+        const el = e.currentTarget, c = el.firstElementChild;
+        if (!c) return;
+        const i = Math.round(el.scrollLeft / (c.getBoundingClientRect().width + 16));
+        if (i !== this.state.step) this.setState({ step: i });
+      },
+      bars: [0, 1, 2].map(i => (i === step ? '#006BFF' : 'rgba(255,255,255,.22)')),
+      layers: layerData.map((l, i) => ({
+        ...l, open: open === i,
+        rot: open === i ? 'rotate(180deg)' : 'none',
+        bg: open === i ? '#fff' : 'transparent',
+        border: open === i ? '#006BFF' : '#dee2ec',
+        toggle: () => this.setState({ open: open === i ? -1 : i })
+      })),
+      p0: pf(0), p1: pf(1), p2: pf(2),
+      chips: ['Remembers your preferences & workflows', 'Builds knowledge pages automatically', 'Reflects & consolidates overnight', 'Per-user & per-organization scoping'],
+      intList: [
+        { a: 'Project management', b: ' — Redmine, Jira, ClickUp' },
+        { a: 'DevOps', b: ' — GitLab, SonarQube, CI/CD' },
+        { a: 'Databases', b: ' — PostgreSQL, MySQL, MongoDB' },
+        { a: 'Communication', b: ' — Email, MS Teams, Slack, Zalo' },
+        { a: '', b: 'Custom APIs via MCP protocol' }
+      ],
+      nodes: ['Redmine', 'GitLab', 'Redis', 'PostgreSQL', 'SonarQube', 'S3', 'Email', 'Cron Job']
+    };
+  }
+}
+</script>
+</body>
+</html>
